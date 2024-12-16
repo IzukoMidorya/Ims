@@ -17,7 +17,7 @@ mongoose
 exports.items = async (req, res) => {
   const items = await Item.find({});
   // res.render('indexItem', { items });
-  rers.send('Hello');
+  res.send('Hello');
 };
 
 exports.addItemForm = (req, res) => {
