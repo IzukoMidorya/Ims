@@ -15,7 +15,7 @@ mongoose
 
 //List of all User
 exports.items = async (req, res) => {
-  const items = await Item.find({});
+  // const items = await Item.find({});
   // res.render('indexItem', { items });
   res.send('Hello');
 };
