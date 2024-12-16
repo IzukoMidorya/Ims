@@ -1,0 +1,55 @@
+<%- include('./partials/head.ejs') %>
+<body>
+   <div class="container mt-5"><h1>Inventory managemet System</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>List of Items</h2>
+      <a href="/items/new-item" class="btn btn-primary">Add Item</a>
+    </div>
+     <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+         <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Item Code</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>CreatedAt</th>
+          <th>Action</th>
+         </tr>
+        </thead>
+        
+        <tbody>
+          <% items.forEach((item,index)=>{%>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= item._id%></td>
+                <td><%= item.name%></td>
+                <td><%= item.category%></td>
+                <td><%= item.quantity%></td>
+                <td><%= item.price%></td>
+                <td><%= item.description%></td>
+              
+                
+                <% const date  = new Date(item.createdAt) %>
+                <% const formattedDate =`${date.getMonth() + 1 }/${date.getDate()}/${date.getFullYear()}`; %>
+                <td><%= formattedDate%></td>
+
+                 <td>
+                  <a href="/items/<%= item._id %>" class="btn btn-sm btn-info text-white">View</a>
+                  <a href="/items/<%= item._id %>/edit" class="btn btn-sm btn-warning text-dark">Update</a>
+                   <form action="/items/<%= item._id %>?_method=DELETE" class="d-inline" method="post">
+                    <button class="btn btn-sm btn-danger">DELETE</button>
+                   </form>
+                 </td>
+
+              </tr>
+         <% }) %>
+        </tbody>
+
+     </table>
+   </div> 
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

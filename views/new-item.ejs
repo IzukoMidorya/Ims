@@ -1,0 +1,35 @@
+<%- include('./partials/head.ejs') %>
+
+<body>
+     <div class="container mt-5">
+     <h2>User Information form</h2>
+     
+     <form action="/items/create-item" method="post">
+
+      <div class="form-group mb-5">
+        <label for="name" class="required">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+
+        <label for="category" class="required">Category</label>
+        <input type="text" class="form-control" id="catergory" name="category" required>
+
+        <label for="quantity" >Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" >
+
+        <label for="price" >Price</label>
+        <input type="number" class="form-control" id="price" name="price" >
+  
+        <label for="description" >Description</label>
+        <input type="text" class="form-control" id="description" name="description" >
+
+      </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/items" class="btn btn-secondary">Cancel</a>
+     </form>
+     </div>
+
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
