@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const Item = require('../../models/item');
-
+require('dotenv').config();
 mongoose
-  .connect(
-    'mongodb+srv://netninja:Salinas051288@node-tuts.4ygbqsh.mongodb.net/?retryWrites=true&w=majority&appName=Node-tuts'
-  )
+  .connect(process.env.URI)
   .then(() => {
     console.log('Opened MongoDB connection.');
   })
