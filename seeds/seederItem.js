@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const Item = require('../models/item');
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/item-db')
+  .connect(
+    'mongodb+srv://netninja:Salinas051288@node-tuts.4ygbqsh.mongodb.net/?retryWrites=true&w=majority&appName=Node-tuts'
+  )
   .then(() => {
     console.log('Opened MongoDB Connection.');
   })
